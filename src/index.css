@@ -1,13 +1,40 @@
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: black;
+  color: white;
+}
+.custom-bg {
+  background-image: linear-gradient(to bottom, rgb(20, 20, 20), black);
+}
+@font-face {
+  font-family: "Circular";
+  src: url("fonts/circular-spotify-text-font/CircularSpotifyText-Medium.otf")
+      format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+input::placeholder {
+  color: gray;
+  font-weight: 400
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer utilities {
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+  .flex-between{
+    @apply flex justify-between items-center;
+  }
+  .btn{
+    @apply px-8 py-3 border border-gray-dark border-opacity-60 rounded-full mb-2 text-base
+  }
 }
