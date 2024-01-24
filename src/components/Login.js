@@ -9,35 +9,58 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 const Login = () => {
   // Password visibility function
   const [isVisible, setIsVisible] = useState(false);
+  const [isLoginPageActive, setIsLoginPageActive] = useState(true);
   const handleVisibility = () => {
     setIsVisible(!isVisible);
+  };
+
+  const handlePage = () => {
+    setIsLoginPageActive(!isLoginPageActive);
   };
 
   return (
     <div className="w-full relative">
       <Header />
-      <div className="custom-bg py-8 relative">
+      <div className="custom-bg pt-8 relative">
         <div className="bg-black w-[734px] relative m-auto flex-center flex-col py-[70px] rounded-sm px-28">
-          <p className="text-4xl font-[600] mb-10">Log in to Spotify</p>
+          <p className="text-4xl font-semibold w-[340px]  mb-10 ">
+            {isLoginPageActive
+              ? "Log in to Spotify"
+              : "Sign up to start listening"}
+          </p>
           <div className="w-[324px]">
             <div className="btn flex justify-start items-center gap-9">
               <img src={google} alt="google" />
-              <p>Continue with Google</p>
+              <p>
+                {isLoginPageActive
+                  ? "Continue with Google"
+                  : "Sign up with Google"}
+              </p>
             </div>
             <div className="btn flex justify-start items-center gap-9">
               <img src={facebook} alt="facebook" />
-              <p>Continue with Facebook</p>
+              <p>
+                {isLoginPageActive
+                  ? "Continue with Facebook"
+                  : "Sign up with Facebook"}
+              </p>
             </div>
             <div className="btn flex justify-start items-center gap-9">
               <img src={apple} alt="apple" />
-              <p>Continue with Apple</p>
+              <p>
+                {isLoginPageActive
+                  ? "Continue with Apple"
+                  : "Sign up with Apple"}
+              </p>
             </div>
-            <div className="btn">
-              <p className="ml-4">Continue with phone number</p>
-            </div>
+            {isLoginPageActive && (
+              <div className="btn">
+                <p className="ml-4">Continue with phone number</p>
+              </div>
+            )}
           </div>
           <div className="w-full h-[1px] bg-white bg-opacity-[15%] my-8"></div>
-          <form className="w-[324px] relative">
+          <form className="w-[324px] relative" onSubmit={(e) => e.preventDefault()}>
             <div>
               <label for="email">
                 <p className="text-sm font-bold mb-2">Email</p>
@@ -50,6 +73,18 @@ const Login = () => {
                 className="block mb-4 py-[10px] px-4 w-full border text-base border-gray-dark border-opacity-60 rounded-[4px] bg-black-light"
               ></input>
             </div>
+            {!isLoginPageActive && <div>
+              <label for="username">
+                <p className="text-sm font-bold mb-2">Username</p>
+              </label>
+              <input
+                type="username"
+                id="username"
+                name="username"
+                placeholder="Username"
+                className="block mb-4 py-[10px] px-4 w-full border text-base border-gray-dark border-opacity-60 rounded-[4px] bg-black-light"
+              ></input>
+            </div> }
             <div>
               <label for="password ">
                 <p className="text-sm font-bold mb-2">Password</p>
@@ -67,28 +102,37 @@ const Login = () => {
                 </div>
               </div>
             </div>
-            <button className="btn w-full bg-green-light hover:bg-green text-black border-none mt-8">
-              Log In
+            <button
+              className="btn w-full bg-green-light hover:bg-green text-black border-none mt-8"
+            >
+              {isLoginPageActive ? "Log In": "Sign Up"}
             </button>
-            <a href="/" className="underline cursor-pointer hover:text-green ">
+            {isLoginPageActive && <a href="/" className="underline cursor-pointer hover:text-green ">
               <p className=" mt-6  text-center">Forgot your password?</p>
-            </a>
+            </a>}
           </form>
           <div className="w-full h-[1px] bg-white bg-opacity-[15%] my-8"></div>
           <p className="text-gray-dark mt-4">
-            Don't have an account?
+            {isLoginPageActive ? "Don't have an account? " : "Already have an account? "}
             <a
-              href="/"
+              href="#hey"
               className="ml-1 text-white underline cursor-pointer hover:text-green text-center"
+              onClick={handlePage}
             >
-              Sign Up for Spotify
+              {isLoginPageActive ? "Sign Up for Spotify" : "Log in here. "}
             </a>
           </p>
         </div>
       </div>
       <p className="text-[11px] text-gray-dark text-center mb-6">
         This site is protected by reCAPTCHA and the Google
-        <a href="/" className="underline mx-[2px] ">Privacy Policy</a> and <a href="/"  className="underline mx-[2px]">Terms of Service</a>
+        <a href="/" className="underline mx-[2px] ">
+          Privacy Policy
+        </a>
+        and
+        <a href="/" className="underline mx-[2px]">
+          Terms of Service
+        </a>
         apply.
       </p>
     </div>
