@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/Spotify/static/css/main.e90f668f.css",
+    "main.js": "/Spotify/static/js/main.c0c75a61.js",
+    "static/js/787.83e7581c.chunk.js": "/Spotify/static/js/787.83e7581c.chunk.js",
+    "static/media/CircularSpotifyText-Medium.otf": "/Spotify/static/media/CircularSpotifyText-Medium.7f8341c6940468e86d8d.otf",
+    "static/media/spotifylogo.png": "/Spotify/static/media/spotifylogo.f48fb565509bf23854a8.png",
+    "static/media/google.svg": "/Spotify/static/media/google.c4c0101d9372ee4ee76c5be241e8e8d8.svg",
+    "static/media/apple.svg": "/Spotify/static/media/apple.8412be4dcdb0ac14fff6393a6ca49e01.svg",
+    "index.html": "/Spotify/index.html",
+    "static/media/facebook.svg": "/Spotify/static/media/facebook.a6cfac4654fa1ec4951a5409a09eb35e.svg",
+    "main.e90f668f.css.map": "/Spotify/static/css/main.e90f668f.css.map",
+    "main.c0c75a61.js.map": "/Spotify/static/js/main.c0c75a61.js.map",
+    "787.83e7581c.chunk.js.map": "/Spotify/static/js/787.83e7581c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e90f668f.css",
+    "static/js/main.c0c75a61.js"
+  ]
+}
